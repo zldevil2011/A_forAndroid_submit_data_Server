@@ -57,7 +57,7 @@ public class MainActivity extends Activity {
             String path_get = "http://123.57.206.52/homepage/";
             try {
 //            	String login_res = submitDataByHttpClientDoGet(map, path);
-				String login_res = submitDataByDoPost(map, path_post2);
+				String login_res = submitDataByDoPost(login_username, login_password, map, path_post2);
 				result.setText(login_res);
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
@@ -88,11 +88,11 @@ public class MainActivity extends Activity {
         return super.onOptionsItemSelected(item);
     }
     
-    public String submitDataByDoPost(Map<String, String> map, String path) throws Exception {
+    public String submitDataByDoPost(String u, String p, Map<String, String> map, String path) throws Exception {
         URL Url = new URL(path);
         JSONObject user_info = new JSONObject();
-        user_info.put("username", "kdq");
-        user_info.put("password", "kdq");
+        user_info.put("username", u);
+        user_info.put("password", p);
         String content = String.valueOf(user_info);
         HttpURLConnection HttpConn = (HttpURLConnection) Url.openConnection();
         HttpConn.setRequestMethod("POST");

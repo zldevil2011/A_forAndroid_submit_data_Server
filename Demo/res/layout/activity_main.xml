@@ -18,7 +18,7 @@
         android:layout_below="@+id/username"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:inputType="numberPassword"
+        android:inputType="textPassword"
         />
 	<Button
 	    android:id="@+id/submit"
